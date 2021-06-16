@@ -1,0 +1,28 @@
+syntax = "proto2";
+
+package interfacevalues;
+
+message DroneInfo{
+
+	optional string name = 1;
+
+	message Location {
+		optional int32 xcoord = 1;
+		optional int32 ycoord = 2;
+	}
+
+	message SearchArea {
+		optional int32 upperbound = 1;
+		optional int32 leftbound = 2;
+		optional int32 lowerbound = 3;
+		optional int32 rightbound = 4;	
+	}
+
+	repeated Location location = 2;
+	repeated SearchArea searcharea = 3;
+
+}
+
+message MapInfo {
+	repeated DroneInfo droneinfo = 1;
+}
